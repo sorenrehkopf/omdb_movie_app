@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Node Movies</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+		<h3>Search for a movie!</h3><a href="/">Home.</a>
+			<form class="form-group" action="/movies">
+				<div>
+					<label>Search for a movie!</label>
+					<input name="q" type="text" class="form-control srchField">
+					<input type="submit" class="btn btn-primary">
+				</div>
+			</form>
+		</div>
+	</nav>
+	<div class="row">

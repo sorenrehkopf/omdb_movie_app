@@ -1,0 +1,22 @@
+<% include ../shared/header.ejs %>
+
+<div class="col-sm-5 col-sm-offset-1 pull-left">
+<img src="<%= movie.poster%>">
+</div>
+<div class="col-sm-5 pull-right">
+<h1><%= movie.title %></h1>
+<h6><%= movie.year %></h6>
+<p><%= movie.plot %></p>
+<p>Imdb Rating:<%= movie.imdb %>
+<% for(i=0;i<Math.round(movie.imdb);i++){ %>
+<img src="https://cdn3.iconfinder.com/data/icons/uidesignicons/star_full.png">
+<% } %>
+</p>
+<p>Rotten Tomatoes Rating:<%= movie.tomatoes %>
+<% for(i=0;i<Math.round(movie.tomatoes);i++){ %>
+<img src="https://cdn3.iconfinder.com/data/icons/uidesignicons/star_full.png">
+<% } %>
+</p>
+</div>
+
+<% include ../shared/footer.ejs %>

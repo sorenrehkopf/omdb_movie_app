@@ -1,0 +1,25 @@
+body{
+	background-image: url(http://farm4.staticflickr.com/3632/5779401142_78dd986417_o.jpg);
+	background-position: fixed;
+	width: 100vw;
+	height:100vh;
+}
+.navbar{
+background-color: rgba(200,200,200,.8)
+}
+.srchField{
+	width:75%;
+	display:inline;
+}
+.navbar h3{
+	display:inline;
+}
+.navbar a{
+	display:inline;
+	float:right;
+}
+.homeView{
+	background-color: rgba(200,200,200,.8);
+	height:500px;
+	border-radius: 3px;
+}
