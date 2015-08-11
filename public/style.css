@@ -4,9 +4,9 @@ body{
 	width: 100vw;
 	height:100vh;
 }
-.navbar{
+/*.navbar{
 background-color: rgba(200,200,200,.8)
-}
+}*/
 .srchField{
 	width:75%;
 	display:inline;
@@ -19,7 +19,39 @@ background-color: rgba(200,200,200,.8)
 	float:right;
 }
 .homeView{
-	background-color: rgba(200,200,200,.8);
-	height:500px;
-	border-radius: 3px;
+	background-color: rgba(100,100,100,.6);
+	height:250px;
+	border-radius: 4px;
+	margin-top: 15vh;
+	color:white;
+}
+.well{
+	background-color: rgba(100,100,100,.6);
+	border-color: rgba(100,100,100,.6);
+	color:white;
+}
+.well a{
+	color:white;
+}
+.well img{
+	max-height:50px;
+	display:inline-block;
+}
+.well h1{
+	display:inline-block;
+	vertical-align: bottom;
+}
+#commentArea textArea{
+	width:100%;
+	height:50px;
+}
+#commentArea{
+	max-height:55vh;
+	overflow:auto;
+}
+.css-movieInfo{
+	background-color: rgba(100,100,100,.6);
+	border-color: rgba(100,100,100,.6);
+	border-radius: 4px;
+	color:white;
 }

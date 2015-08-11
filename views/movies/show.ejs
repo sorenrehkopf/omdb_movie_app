@@ -3,7 +3,14 @@
 <div class="col-sm-5 col-sm-offset-1 pull-left">
 <img src="<%= movie.poster%>">
 </div>
-<div class="col-sm-5 pull-right">
+<div class="col-sm-5 pull-right css-movieInfo">
+<form method="post" action="/favorites">
+<input type="hidden" name="imdbid" value=<%= movie.imdbid %>>
+<input type="hidden" name="title" value='<%= movie.title %>'>
+<input type="hidden" name="year" value=<%= movie.year %>>
+<input type="hidden" name="poster" value=<%= movie.poster %>>
+<input type="submit" class="btn btn-danger  pull-right" style="margin-top:2vh;" value="Add to favorites!">
+</form>
 <h1><%= movie.title %></h1>
 <h6><%= movie.year %></h6>
 <p><%= movie.plot %></p>
@@ -17,6 +24,18 @@
 <img src="https://cdn3.iconfinder.com/data/icons/uidesignicons/star_full.png">
 <% } %>
 </p>
+<div id="commentArea">
+<form method="post" action="/comments">
+<input type="hidden" name="imdbid" value=<%= movie.imdbid %>>
+<textarea type="text" name="text" style="color:black;" placeholder="Comment here!"></textarea>
+<input type="submit" class="btn btn-primary" value="Comment!">
+</form>
+<% comments.forEach(function(comment){ %>
+
+	<div><hr><p><%= comment.createdAt %></p><p><%= comment.text %></p><hr></div>
+	
+<% }) %>
+</div>
 </div>
 
 <% include ../shared/footer.ejs %>

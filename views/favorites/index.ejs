@@ -1,0 +1,10 @@
+<% include ../shared/header %>
+
+<% favs.forEach(function(fav){ %>
+	<div class="well">
+	<img src=<%= fav.poster %>>
+	<h1><a href="/movies/show/?q=<%= fav.imdbid %>"><%= fav.title %></a></h1>
+	</div>
+<% }) %>
+
+<% include ../shared/footer %>

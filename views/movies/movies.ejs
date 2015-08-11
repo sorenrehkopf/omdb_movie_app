@@ -1,12 +1,11 @@
 <% include ../shared/header.ejs %>
-
-<a href="/">Back to home.</a>
 <div class="col-sm-8">
 <% for(i=0;i<movies.length;i++){ %>
-<div class="well">
+<div class="well js-formDiv" >
 <h1><a href="/movies/show/?q=<%= movies[i].imdbID %>"><%= movies[i].Title %></a></h1>
 <h6><%= movies[i].Year %></h6>
 </div>
 <% } %>
+</form>
 </div>
 <% include ../shared/footer.ejs %>
