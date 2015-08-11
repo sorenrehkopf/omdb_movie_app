@@ -52,7 +52,7 @@ app.get("/movies/show", function(req, res){
 	var comments =[]
 	db.favorite.find({where:{imdbid:q}}).then(function(favorite){
 		if(favorite){
-		db.comment.findAll({where:{favoriteId:favorite.id}}).then(function(commentss){
+		db.comment.findAll({where: {favoriteId:favorite.id}}).then(function(commentss){
 			commentss.map(function(comment){
 				comments.push(comment);
 			});

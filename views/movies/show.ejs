@@ -6,10 +6,10 @@
 <div class="col-sm-5 pull-right css-movieInfo">
 <form method="post" action="/favorites">
 <input type="hidden" name="imdbid" value=<%= movie.imdbid %>>
-<input type="hidden" name="title" value='<%= movie.title %>'>
-<input type="hidden" name="year" value=<%= movie.year %>>
-<input type="hidden" name="poster" value=<%= movie.poster %>>
-<input type="submit" class="btn btn-danger  pull-right" style="margin-top:2vh;" value="Add to favorites!">
+<input type="hidden" name="title" id="title" value='<%= movie.title %>'>
+<input type="hidden" name="year" id="year" value=<%= movie.year %>>
+<input type="hidden" name="poster" id="poster" value=<%= movie.poster %>>
+<input type="submit" class="btn btn-danger  pull-right js-favBtn" style="margin-top:2vh;" value="Add to favorites!">
 </form>
 <h1><%= movie.title %></h1>
 <h6><%= movie.year %></h6>
@@ -24,17 +24,19 @@
 <img src="https://cdn3.iconfinder.com/data/icons/uidesignicons/star_full.png">
 <% } %>
 </p>
-<div id="commentArea">
+<div>
 <form method="post" action="/comments">
-<input type="hidden" name="imdbid" value=<%= movie.imdbid %>>
-<textarea type="text" name="text" style="color:black;" placeholder="Comment here!"></textarea>
-<input type="submit" class="btn btn-primary" value="Comment!">
+<input type="hidden" name="imdbid" id="imdbid" value='<%= movie.imdbid %>'>
+<textarea type="text" name="text" id="commentText" style="color:black;" placeholder="Comment here!"></textarea>
+<input type="submit" id="commentBtn" class="btn btn-primary" value="Comment!">
 </form>
-<% comments.forEach(function(comment){ %>
+<div id="commentArea">
+<% for(i=comments.length-1;i>=0;i--){ %>
 
-	<div><hr><p><%= comment.createdAt %></p><p><%= comment.text %></p><hr></div>
+	<div><hr><p><%= comments[i].createdAt %></p><p><%= comments[i].text %></p><hr></div>
 	
-<% }) %>
+<% } %>
+</div>
 </div>
 </div>
 

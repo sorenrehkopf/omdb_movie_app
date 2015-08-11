@@ -7,16 +7,16 @@ var router = express.Router();
 // });
 
 router.post('/', function(req, res){
-	var imdbid = req.body.imdbid;
-	db.favorite.find({where:{imdbid:imdbid}}).then(function(favorite){
+	var imdb = req.body.imdbid;	
+	db.favorite.find({where:{imdbid:imdb}}).then(function(favorite){
 		if(favorite){
 		favorite.createComment({
 			text:req.body.text
 		}).then(function(comment){
-			res.redirect('/movies/show/?q='+imdbid)
+			res.send(comment)
 		});
 		}else{
-			res.redirect('/movies/show/?q='+imdbid);
+			res.send(false);
 		}
 	});
 });

@@ -41,17 +41,26 @@ background-color: rgba(200,200,200,.8)
 	display:inline-block;
 	vertical-align: bottom;
 }
-#commentArea textArea{
+textArea{
 	width:100%;
 	height:50px;
 }
-#commentArea{
-	max-height:55vh;
+/*#commentArea{
+	max-height:40vh;
 	overflow:auto;
-}
+}*/
 .css-movieInfo{
 	background-color: rgba(100,100,100,.6);
 	border-color: rgba(100,100,100,.6);
 	border-radius: 4px;
 	color:white;
+	height: 87vh;
+	overflow:auto;
+}
+.css-alertText{
+	color:white;
+	margin-left:100px;
+}
+.css-alert{
+	display:none;
 }

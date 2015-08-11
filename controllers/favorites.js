@@ -8,15 +8,25 @@ router.get('/', function(req, res){
 	})
 });
 
+// router.get('/search', function(req, res){
+// 	db.favorite.find({where:{imdbid:imdbid}}).then(function(fav){
+// 		if(fav){
+// 		res.send(true);
+// 		}else{
+// 			res.send(false)
+// 		};
+// 	});
+// });
+
 router.post('/', function(req, res){
-	var imdbid = req.body.imdbid;
+	var imdb = req.body.imdbid;
 	db.favorite.findOrCreate({where:{
-			imdbid:req.body.imdbid,
+			imdbid:imdb,
 			title:req.body.title,
 			year:req.body.year,
 			poster:req.body.poster
 		}}).then(function(favorite){
-			res.redirect('/movies/show/?q='+imdbid);
+			res.send(favorite);
 		});
 });
 
