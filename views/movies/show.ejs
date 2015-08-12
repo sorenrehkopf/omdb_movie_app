@@ -1,17 +1,26 @@
 <% include ../shared/header.ejs %>
 
-<div class="col-sm-5 col-sm-offset-1 pull-left">
+<div class="col-sm-4 pull-left">
 <img src="<%= movie.poster%>">
 </div>
-<div class="col-sm-5 pull-right css-movieInfo">
+<div class="col-sm-6 pull-right css-movieInfo">
 <form method="post" action="/favorites">
 <input type="hidden" name="imdbid" value=<%= movie.imdbid %>>
 <input type="hidden" name="title" id="title" value='<%= movie.title %>'>
 <input type="hidden" name="year" id="year" value=<%= movie.year %>>
 <input type="hidden" name="poster" id="poster" value=<%= movie.poster %>>
+<% if(!favorited) { %>
 <input type="submit" class="btn btn-danger  pull-right js-favBtn" style="margin-top:2vh;" value="Add to favorites!">
+<% }else{ %>
+<h4 class="pull-right" style="display:inline;">Favorited!</h4>
+<% } %>
 </form>
 <h1><%= movie.title %></h1>
+<div id="tagArea">
+<% tags.forEach(function(tag){ %>
+<span><a href="/tags/<%= tag.id %>">#<%= tag.name %></a></span>
+<% }) %>
+</div>
 <h6><%= movie.year %></h6>
 <p><%= movie.plot %></p>
 <p>Imdb Rating:<%= movie.imdb %>
@@ -29,13 +38,15 @@
 <input type="hidden" name="imdbid" id="imdbid" value='<%= movie.imdbid %>'>
 <textarea type="text" name="text" id="commentText" style="color:black;" placeholder="Comment here!"></textarea>
 <input type="submit" id="commentBtn" class="btn btn-primary" value="Comment!">
+<button id="tagBtn" class="btn btn-primary"><span class="glyphicon glyphicon-tags"></span></button>
+<input type="text" name="name" id="tagField" style="color:black;" placeholder="#hashtag here!">
 </form>
 <div id="commentArea">
-<% for(i=comments.length-1;i>=0;i--){ %>
+<% for(i=comments.length-1;i>=0;i--){ if(comments[i].text){ %>
 
 	<div><hr><p><%= comments[i].createdAt %></p><p><%= comments[i].text %></p><hr></div>
 	
-<% } %>
+<% }} %>
 </div>
 </div>
 </div>

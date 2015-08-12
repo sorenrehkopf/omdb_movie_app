@@ -1,10 +1,14 @@
 <% include ../shared/header %>
-
-<% favs.forEach(function(fav){ %>
+<div class="col-sm-12">
+<% for(i=0;i<=favs.length-1;i++){ %>
 	<div class="well">
-	<img src=<%= fav.poster %>>
-	<h1><a href="/movies/show/?q=<%= fav.imdbid %>"><%= fav.title %></a></h1>
+	<img src=<%= favs[i].poster %>>
+	<h1><a href="/movies/show/?q=<%= favs[i].imdbid %>"><%= favs[i].title %></a></h1>
+	<% for(j=0;j<favs[i].tags.length;j++){ %>
+		<span><a href="/tags/<%= favs[i].tags[j].id %>">#<%= favs[i].tags[j].name %></a></span>
+	<% } %>
 	</div>
-<% }) %>
+<% } %>
+</div>
 
 <% include ../shared/footer %>

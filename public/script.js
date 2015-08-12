@@ -22,6 +22,28 @@ $(function(){
 		});
 	});
 
+	$('#tagBtn').on('click',function(e){
+		e.preventDefault();
+		var name = $('#tagField').val();
+		var imdbid = $('#imdbid').val();
+		var tag = $.ajax({
+			url: '/tags',
+			method: 'POST',
+			data: {'name':name,'imdbid':imdbid}
+		}).done(function(tag){
+			console.log(tag)
+			if(tag){
+				$('#tagArea').append("<span><a href='/tags/"+tag.id+"'>#"+tag.name+"</a></span>");
+			}else{
+				console.log(false);
+				$('.css-alertText').text('You must favorite this movie to add tags!');
+				$('.css-alert').fadeIn(400).delay(3000);
+				$('.css-alert').fadeOut(3000);
+			};
+		});
+
+	});
+
 	$('.js-favBtn').on('click',function(e){
 		e.preventDefault();
 		var imdbid = $('#imdbid').val();
@@ -37,6 +59,7 @@ $(function(){
 				$('.css-alertText').text('This movie has been added to favorites!');
 				$('.css-alert').fadeIn(400).delay(3000);
 				$('.css-alert').fadeOut(3000);
+				$('.js-favBtn').fadeOut(400);
 			});
 	});
 

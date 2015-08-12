@@ -1,5 +1,5 @@
 <% include ../shared/header.ejs %>
-<div class="col-sm-8">
+<div class="col-sm-12">
 <% for(i=0;i<movies.length;i++){ %>
 <div class="well js-formDiv" >
 <h1><a href="/movies/show/?q=<%= movies[i].imdbID %>"><%= movies[i].Title %></a></h1>

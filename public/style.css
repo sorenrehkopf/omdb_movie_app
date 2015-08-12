@@ -64,3 +64,28 @@ textArea{
 .css-alert{
 	display:none;
 }
+.css-fullView{
+	max-height: 88vh;
+	overflow:auto;
+}
+.css-fullView::-webkit-scrollbar{
+	background-color: rgba(200,200,200,0);
+	width:6px;
+}
+.css-fullView::-webkit-scrollbar-thumb{
+	background-color: rgba(200,200,200,.4);
+	width:6px;
+}
+#tagField{
+	width:28vw;
+	border-radius:7px;
+	height:4.3vh;
+	border:1px solid white;
+}
+.css-tagHead{
+	background-color: rgba(100,100,100,.6);
+	border-radius: 4px;
+	color:white;
+	text-align: center;
+	padding:5px auto;
+}
