@@ -10,10 +10,10 @@ router.get('/', function(req, res){
 
 router.get('/:id', function(req, res){
 	var id = parseInt(req.params.id);
-	db.tag.findById(id).then(function(tag){
+	db.tag.find({where:{id:id}, include:[db.favorite]}).then(function(tag){
 		res.render('tags/show',{tag:tag});
 	})
-	
+
 })
 
 router.post('/', function(req, res){

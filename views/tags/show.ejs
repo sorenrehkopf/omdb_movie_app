@@ -3,4 +3,10 @@
 <div class="css-tagHead">
 <h1>#<%= tag.name %></h1>
 </div>
+<% for(i=0;i<=tag.favorites.length-1;i++){ %>
+	<div class="well">
+	<img src=<%= tag.favorites[i].poster %>>
+	<h1><a href="/movies/show/?q=<%= tag.favorites[i].imdbid %>"><%= tag.favorites[i].title %></a></h1>
+	</div>
+<% } %>
 <% include ../shared/footer %>
