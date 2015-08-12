@@ -12,6 +12,7 @@ $(function(){
 		}).done(function(comment){
 			console.log(comment)
 			if(comment){
+				$('#commentText').val("");
 				$('#commentArea').prepend("<div><hr><p>"+comment.createdAt+"</p><p>"+comment.text+"</p><hr></div>");
 			}else{
 				console.log(false);
@@ -33,6 +34,7 @@ $(function(){
 		}).done(function(tag){
 			console.log(tag)
 			if(tag){
+				$('#tagField').val("");
 				$('#tagArea').append("<span><a href='/tags/"+tag.id+"'>#"+tag.name+"</a></span>");
 			}else{
 				console.log(false);

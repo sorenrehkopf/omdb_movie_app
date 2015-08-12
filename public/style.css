@@ -89,3 +89,17 @@ textArea{
 	text-align: center;
 	padding:5px auto;
 }
+.css-tagView{
+	background-color: rgba(100,100,100,.6);
+	height:250px;
+	border-radius: 4px;
+	margin-top: 15vh;
+	color:white;
+	text-align: center;
+}
+.css-tagView a{
+	margin-top: 40px;
+}
+.css-tagView div{
+	display:inline-block;
+}

@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res){
-	db.tag.findAll().then(function(tags){
+	db.tag.findAll({include:[db.favorite]}).then(function(tags){
 		res.render('tags/index',{tags:tags});
 	})
 });

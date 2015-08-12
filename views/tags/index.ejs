@@ -1,10 +1,9 @@
 <% include ../shared/header %>
 
-<div class="col-sm-12">
+<div class="col-sm-12 css-tagView">
 <% for(i=tags.length-1;i>=0;i--){ %>
-	<div class="well">
-	<h1><a href="/tags/<%= tags[i].id %>">#<%= tags[i].name %></a></h1>
-	</div>
+	<div style="margin-top:<%= Math.round(Math.random()*40) %>px;margin-left:<%= Math.round(Math.random()*100) %>px"><a style="color:white;font-size:<%= 10+tags[i].favorites.length*10%>px;" href="/tags/<%= tags[i].id %>">#<%= tags[i].name %></a></div>
+
 <% } %>
 </div>
 
