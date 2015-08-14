@@ -11,9 +11,13 @@ $(function(){
 			data: {'text':text,'imdbid':imdbid}
 		}).done(function(comment){
 			console.log(comment)
-			if(comment){
+			if(comment.text){
 				$('#commentText').val("");
 				$('#commentArea').prepend("<div><hr><p>"+comment.createdAt+"</p><p>"+comment.text+"</p><hr></div>");
+			}else if(comment.message){
+				$('.css-alertText').text(comment.errors[0].message);
+				$('.css-alert').fadeIn(400).delay(3000);
+				$('.css-alert').fadeOut(3000);
 			}else{
 				console.log(false);
 				$('.css-alertText').text('You must favorite this movie to comment on it!');

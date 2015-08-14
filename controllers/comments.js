@@ -12,8 +12,11 @@ router.post('/', function(req, res){
 		if(favorite){
 		favorite.createComment({
 			text:req.body.text
-		}).then(function(comment){
-			res.send(comment)
+		}).catch(function(err){
+				console.log(err);
+				res.send(err)
+			}).then(function(comment){
+			res.send(comment);
 		});
 		}else{
 			res.send(false);
